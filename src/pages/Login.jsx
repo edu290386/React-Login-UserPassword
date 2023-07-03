@@ -1,5 +1,6 @@
 import { useContext, useState } from "react"
 import { ContextProvider } from '../context/ContextApp' 
+import Swal from "sweetalert2"
 
 const Login = () => {
   const [dataLogin, setDataLogin] = useState({})
@@ -16,7 +17,13 @@ const Login = () => {
 
     if (userFind) {
       setUserData(userFind)
-    }
+    } else {
+      Swal.fire(
+          'No se pudo iniciar sesion!',
+          'Correo o contraseña incorrecta',
+          'error'
+      )
+  }
 
   }
 
@@ -33,7 +40,7 @@ const Login = () => {
                 <input onChange={handleChange} name="password" type="password" className='border-2 rounded-sm' />
             </label>
             <button className="bg-gray-200 rounded-sm px-2 py-0.5 w-max h-max">
-                Registrar
+                Iniciar sesion
             </button>
         </form>
     </div>

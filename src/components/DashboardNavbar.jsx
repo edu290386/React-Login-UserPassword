@@ -1,24 +1,24 @@
 import { Link } from 'react-router-dom'
 
-export const Navbar = () => {
+const DashboardNavbar = () => {
   return (
     <div className='max-w-[1200px] mx-auto'>
         <article className='max-w-[1200px] mx-auto flex justify-between py-4'>
             <span>Logo</span>
             <ul className='flex gap-4'>
                 <li>
-                    <Link to={'/'}>
+                    <Link state={{logged: true}} to={'/dashboard'}>
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link to={'/login'}>
-                        Login
+                    <Link state={{logged: true}} to={'/dashboard/products'}>
+                        Products
                     </Link>
                 </li>
                 <li>
-                    <Link to={'/register'}>
-                        Register
+                    <Link state={{logged: true}} to={'/dashboard/cart'}>
+                        Cart
                     </Link>
                 </li>
             </ul>
@@ -27,3 +27,4 @@ export const Navbar = () => {
   )
 }
 
+export default DashboardNavbar
