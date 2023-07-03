@@ -18,7 +18,7 @@ const HomeProducts = () => {
   console.log(dataProducts)
   
   return (
-    <div>
+    <div className="max-w-[1200px] mx-auto">
       <form action="">
         <input type="text" placeholder="Busqueda de productos..." className="border-2 py-1 px-3 w-64" />
       </form>
